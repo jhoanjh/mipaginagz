@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamPlus - Todo el Entretenimiento en un Solo Lugar</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Hubble_ultra_deep_field.jpg/1200px-Hubble_ultra_deep_field.jpg') no-repeat center center/cover; /* Fondo de espacio */
+            background-size: cover;
+            overflow-x: hidden;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .header-logo {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .hero {
+            background: rgba(0, 0, 0, 0.7) url('https://source.unsplash.com/1600x900/?entertainment') no-repeat center center/cover;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: slideIn 1s ease-in-out;
+        }
+        .hero p {
+            font-size: 1.5em;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        .platforms {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .platform {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+        .platform:hover {
+            transform: scale(1.05);
+        }
+        .platform img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+            animation: pulse 1s infinite;
+        }
+        .platform h3 {
+            color: #fff;
+            margin: 10px 0;
+        }
+        .platform p {
+            color: #aaa;
+        }
+        .platform .price {
+            font-size: 1.5em;
+            color: #e50914;
+            margin-bottom: 10px;
+        }
+        .platform button {
+            background: #e50914;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.3s ease-in-out;
+        }
+        .platform button:hover {
+            background: #f40612;
+        }
+        .product-info {
+            display: none;
+            text-align: center;
+            padding: 50px 0;
+            background: rgba(0, 0, 0, 0.8);
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .product-info h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+        .product-info p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        .product-info .price {
+            font-size: 2em;
+            color: #e50914;
+            margin-bottom: 20px;
+        }
+        .product-info img {
+            width: 150px;
+            margin-bottom: 20px;
+            animation: pulse 1s infinite;
+        }
+        .product-info button {
+            background: #e50914;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background 0.3s ease-in-out;
+        }
+        .product-info button:hover {
+            background: #f40612;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-logo">StreamPlus</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Bienvenido a StreamPlus</h1>
+            <p>Todo el entretenimiento que amas, ahora en un solo lugar</p>
+        </div>
+    </section>
+
+    <section class="container platforms">
+        <div class="platform">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Netflix_logo.svg" alt="Netflix Logo">
+            <h3>Netflix</h3>
+            <p>Series y películas originales que no te puedes perder.</p>
+            <div class="price">S/8</div>
+            <button onclick="showProduct('Netflix', 8, 'https://upload.wikimedia.org/wikipedia/commons/6/69/Netflix_logo.svg', 'https://wa.link/slb0s9')">Comprar</button>
+        </div>
+        <div class="platform">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Disney%2B_2024.svg/220px-Disney%2B_2024.svg.png" alt="Disney+ Logo">
+            <h3>Disney+</h3>
+            <p>Accede a la magia de Disney, Pixar, Marvel y más.</p>
+            <div class="price">S/7</div>
+            <button onclick="showProduct('Disney+', 7, 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Disney%2B_2024.svg/220px-Disney%2B_2024.svg.png', 'https://wa.link/slb0s9')">Comprar</button>
+        </div>
+        <div class="platform">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ84F-W1KO1xxHdbQ0dA5AGccKgOR40BNTC4w&s" alt="Spotify Logo">
+            <h3>Spotify</h3>
+            <p>Música sin límites para todos tus momentos.</p>
+            <div class="price">S/8</div>
+            <button onclick="showProduct('Spotify', 8, 'https://www.scdn.co/i/_global/open-graph-default.png', 'https://wa.link/slb0s9')">Comprar</button>
+        </div>
+        <div class="platform">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Crunchyroll_2024_stacked.svg/1200px-Crunchyroll_2024_stacked.svg.png" alt="Crunchyroll Logo">
+            <h3>Crunchyroll</h3>
+            <p>Anime y manga en streaming.</p>
+            <div class="price">S/9</div>
+            <button onclick="showProduct('Crunchyroll', 9, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Crunchyroll_2024_stacked.svg/1200px-Crunchyroll_2024_stacked.svg.png', 'https://wa.link/slb0s9')">Comprar</button>
+        </div>
+        <div class="platform">
+            <img src="https://cdn.neowin.com/news/images/uploaded/2023/06/1686164170_primevideo-seo-logo.jpg" alt="Prime Video Logo">
+            <h3>Prime Video</h3>
+            <p>Una gran selección de películas y series para todos.</p>
+            <div class="price">S/7</div>
+            <button onclick="showProduct('Prime Video', 7, 'https://cdn.neowin.com/news/images/uploaded/2023/06/1686164170_primevideo-seo-logo.jpg', 'https://wa.link/slb0s9')">Comprar</button>
+        </div>
+        <div class="platform">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Max_logo.svg/1200px-Max_logo.svg.png" alt="HBO Max Logo">
+            <h3>HBO Max</h3>
+            <p>Accede a los mejores contenidos de HBO y más.</p>
+            <div class="price">S/7</div>
+            <button onclick="showProduct('HBO Max', 7, 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Max_logo.svg/1200px-Max_logo.svg.png', 'https://wa.link/slb0s9')">Comprar</button>
+        </div>
+    </section>
+
+    <section id="product-info" class="product-info">
+        <img id="product-image" src="" alt="Imagen del Producto">
+        <h1 id="product-title">Suscripción</h1>
+        <p id="product-description">Obtén acceso completo a tu servicio favorito.</p>
+        <div class="price" id="product-price">S/7</div>
+        <button id="purchase-button">Comprar Ahora</button>
+    </section>
+
+    <script>
+        function showProduct(name, price, imageUrl, purchaseUrl) {
+            document.getElementById('product-title').textContent = 'Suscripción a ' + name;
+            document.getElementById('product-description').textContent = 'Obtén acceso completo a ' + name + '.';
+            document.getElementById('product-price').textContent = 'S/' + price;
+            document.getElementById('product-image').src = imageUrl;
+            document.getElementById('product-info').style.display = 'block';
+
+            // Desplazamiento suave hacia la sección de información del producto
+            document.getElementById('product-info').scrollIntoView({ behavior: 'smooth' });
+
+            // Configura la URL para redirigir al hacer clic en "Comprar Ahora"
+            document.getElementById('purchase-button').onclick = function() {
+                window.location.href = 'https://wa.link/slb0s9'; // Redirige a la URL deseada
+            };
+        }
+    </script>
+
+</body>
+</html>
